@@ -1,0 +1,1417 @@
+@import "./colors.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
+
+/*---------------------  BASE RULE FOR PROJECT  ---------------------*/
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-primary !important;
+  max-width: 100vw;
+  overflow-x: hidden;
+  color: $font-color !important;
+  font-size: 14px !important;
+  font-size: 1.4rem !important; //1.4rem with 62.5% font-size = 14px
+  background-color: $default !important;
+  margin: 0;
+
+  p {
+    margin-bottom: 0px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0px;
+    color: $font-color;
+  }
+
+  ::selection {
+    background-color: tint($primary, 30%);
+  }
+}
+
+/*-------------------------- COMMON CSS --------------------------*/
+
+.ori-hoverable-wrapper {
+  .ori-on-wrapper-hover-hidden {
+    display: none;
+  }
+  &:hover {
+    .ori-on-wrapper-hover-hidden {
+      display: block;
+    }
+  }
+}
+
+.ori-hover-outline-none {
+  &:hover,
+  &:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+// .ori-box-15 {
+//     @include create-box(15px, 15px);
+// }
+
+// .ori-box-24 {
+//   @include create-box(24px, 24px);
+// }
+
+// .ori-box-100 {
+//   height: 100px;
+//   width: 100px;
+// }
+
+// .ori-list-style-type-none {
+//     list-style-type: none;
+// }
+
+// .ori-line-height-md {
+//   line-height: 1.2;
+// }
+
+// .ori-line-height-24 {
+//     line-height: 24px;
+// }
+
+// .ori-line-height-1 {
+//   line-height: 1;
+// }
+
+// .ori-zindex-1 {
+//   z-index: 1;
+// }
+
+// .ori-zindex-100 {
+//   z-index: 100;
+// }
+
+// .ori-zindex-150 {
+//   z-index: 150;
+// }
+
+.ori-zindex-99999 {
+  z-index: 99999;
+}
+
+// .ori-opacity-medium {
+//   opacity: 0.6;
+// }
+
+.ori-link-primary {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    color: $primary !important;
+  }
+}
+
+// .ori-line-through {
+//   text-decoration: line-through;
+// }
+
+// .ori-text-overflow-dotted {
+//   text-overflow: ellipsis;
+//   overflow: hidden;
+//   white-space: nowrap;
+// }
+
+//ori-dotted-after-line($font-size, $line-height, $line-to-show);
+
+// .ori-dotted-after-sm-2 {
+//   @include ori-dotted-after-line($font-size-sm, 1.3, 2);
+// }
+
+// .ori-dotted-after-xs-3 {
+//   @include ori-dotted-after-line($font-size-xs, 1.3, 3);
+// }
+
+// .ori-dotted-after-xxs-3 {
+//     @include ori-dotted-after-line($font-size-xxs, 1.3, 3);
+// }
+
+// .ori-dotted-after-xs-2 {
+//     @include ori-dotted-after-line($font-size-xs, 1.3, 2);
+// }
+
+// .ori-block-text-overflow-dotted {
+//   display: block; // Fallback for non-webkit
+//   display: -webkit-box;
+//   margin: 0 auto;
+//   -webkit-box-orient: vertical;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+// }
+
+// .ori-space-nowrap {
+//     white-space: nowrap;
+// }
+
+// .ori-user-select-none {
+//   user-select: none;
+// }
+
+// .ori-bg-position-center {
+//   background-position: center;
+// }
+
+// .ori-bg-size-contain {
+//   background-size: contain;
+// }
+
+// .ori-bg-size-cover {
+//   background-size: cover;
+// }
+
+// .ori-bg-no-repeat {
+//   background-repeat: no-repeat;
+// }
+
+.ori-bg-base {
+  background-color: $base;
+}
+
+.ori-bg-primary {
+  background-color: $primary !important;
+}
+
+.ori-bg-black-light {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+// .ori-bg-hover-default {
+//   cursor: pointer;
+
+//   &:hover {
+//     background-color: $default;
+//   }
+// }
+
+.ori-font-light {
+  color: $font-color-light;
+}
+
+.ori-text-center {
+  text-align: center;
+}
+
+.ori-cursor-ptr {
+  cursor: pointer !important;
+}
+
+.ori-cursor-default {
+  cursor: default !important;
+}
+
+.ori-capitalize {
+  text-transform: capitalize;
+}
+
+.ori-capitalize-first::first-letter {
+  text-transform: capitalize;
+}
+
+.ori-uppercase {
+  text-transform: uppercase;
+}
+
+//----------width for loading card ------------
+
+.ori-full-width {
+  width: 100% !important;
+}
+
+.ori-height-auto {
+  height: auto !important;
+}
+
+.ori-full-height {
+  height: 100vh !important;
+}
+
+.ori-full-parent-height {
+  height: 100% !important;
+}
+
+.ori-full-min-height {
+  min-height: 100vh;
+}
+
+// .ori-height-32 {
+//   height: 32px;
+// }
+
+.ori-relative {
+  position: relative !important;
+}
+
+.ori-absolute {
+  position: absolute !important;
+}
+
+.ori-align-full {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.ori-align-left-full {
+  left: 100%;
+}
+
+.ori-align-left {
+  left: 0;
+}
+
+// .ori-align-left-2 {
+//   left: 2px;
+// }
+
+// .ori-align-left-5 {
+//   left: 5px;
+// }
+
+// .ori-align-left-10 {
+//   left: 10px;
+// }
+
+// .ori-align-left-15 {
+//   left: 15px;
+// }
+
+// .ori-align-left-neg-15 {
+//   left: -15px;
+// }
+
+.ori-align-right {
+  right: 0;
+}
+
+// .ori-align-right-3 {
+//   right: 3px;
+// }
+
+// .ori-align-right-5 {
+//   right: 5px;
+// }
+
+// .ori-align-right-10 {
+//   right: 10px;
+// }
+
+.ori-align-right-15 {
+  right: 15px;
+}
+
+// .ori-align-right-25 {
+//   right: 25px;
+// }
+
+// .ori-align-right-neg-5 {
+//     right: -5px;
+// }
+
+.ori-align-top {
+  top: 0 !important;
+}
+
+// .ori-align-top-full {
+//   top: 100%;
+// }
+
+// .ori-align-top-neg-5 {
+//     top: -5px;
+// }
+
+// .ori-align-top-neg-12 {
+//   top: -12px;
+// }
+
+// .ori-align-top-2 {
+//   top: 2px;
+// }
+
+// .ori-align-top-5 {
+//   top: 5px;
+// }
+
+// .ori-align-top-6 {
+//   top: 6px;
+// }
+
+// .ori-align-top-7 {
+//   top: 7px;
+// }
+
+// .ori-align-top-10 {
+//   top: 10px;
+// }
+
+// .ori-align-top-15 {
+//   top: 15px;
+// }
+
+// .ori-align-top-20 {
+//   top: 20px;
+// }
+
+// .ori-align-top-quarter {
+//     top: 25%;
+// }
+
+// .ori-align-bottom-full {
+//   bottom: 100%;
+// }
+
+// .ori-align-bottom-neg-8 {
+//   bottom: -8px;
+// }
+
+// .ori-align-bottom-neg-60 {
+//     bottom: -60px;
+// }
+
+.ori-align-bottom {
+  bottom: 0;
+}
+
+// .ori-align-bottom-10 {
+//   bottom: 10px;
+// }
+
+.ori-fixed {
+  position: fixed !important;
+}
+
+.ori-word-break {
+  word-break: break-word !important;
+}
+
+// .ori-word-break-all {
+//     word-break: break-all !important;
+// }
+
+// .ori-img-contain {
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .ori-r-border-solid {
+//     border-right-style: solid;
+// }
+
+// .ori-r-border-color-primary {
+//   border-right-color: $primary;
+// }
+
+// .ori-border-color-transparent {
+//     border-color: transparent;
+// }
+
+// .ori-border-color-green {
+//     border-color: $green !important;
+// }
+
+
+// .ori-border-width-3 {
+//     border-width: 3px;
+// }
+
+// .ori-border-none {
+//   border: none !important;
+// }
+
+// .ori-l-border-none {
+//   border-left: none !important;
+// }
+
+// .ori-r-border-none {
+//   border-right: none !important;
+// }
+
+// .ori-r-border-transparent-2 {
+//   border-right: 2px solid transparent;
+// }
+
+// .ori-l-border-light {
+//   border-left: 1px solid $border-light;
+// }
+
+// .ori-l-border-transparent-4 {
+//   border-left: 4px solid transparent;
+// }
+
+// .ori-l-border-primary-4 {
+//   border-left: 4px solid $primary;
+// }
+
+// .ori-l-border-primary {
+//     border-left: 1px solid $primary;
+// }
+
+// .ori-no-r-border {
+//   border-right: 0 !important;
+// }
+
+// .ori-r-border-light {
+//   border-right: 1px solid $border-light;
+// }
+
+// .ori-r-border-default {
+//   border-right: 1px solid $border;
+// }
+
+.ori-b-border-light {
+  border-bottom: 1px solid $border-light;
+}
+
+.ori-b-border-lc-transparent {
+  &:last-child {
+    border-bottom-color: transparent;
+  }
+}
+
+.ori-b-border-default {
+  border-bottom: 1px solid $border;
+}
+
+// .ori-t-border-light {
+//   border-top: 1px solid $border-light;
+// }
+
+.ori-border-light {
+  border: 1px solid $border-light;
+}
+
+// .ori-border-dashed-default-hover-primary {
+//   border: 1px dashed $border;
+
+//   &:hover {
+//     border-color: $primary;
+//   }
+// }
+
+.ori-border-default {
+  border: 1px solid $border;
+}
+
+// .ori-l-border-default {
+//   border-left: 1px solid $border;
+// }
+
+// .ori-r-border-default {
+//   border-right: 1px solid $border;
+// }
+
+.ori-b-border-default {
+  border-bottom: 1px solid $border;
+}
+
+// .ori-b-border-light-last-none {
+//   border-bottom: 1px solid $border-light;
+
+//   &:last-child {
+//     border-bottom: none;
+//   }
+// }
+
+// .ori-border-transparent {
+//   border: 1px solid transparent;
+// }
+
+// .ori-tl-no-border-radius {
+//   border-top-left-radius: 0px !important;
+// }
+
+// .ori-tr-no-border-radius {
+//   border-top-right-radius: 0px !important;
+// }
+
+// .ori-bl-no-border-radius {
+//   border-bottom-left-radius: 0px !important;
+// }
+
+// .ori-tr-border-radius-3 {
+//   border-top-right-radius: 3px;
+// }
+
+// .ori-no-br-border-radius {
+//   border-bottom-right-radius: 0 !important;
+// }
+
+// .ori-no-tl-border-radius {
+//   border-top-left-radius: 0 !important;
+// }
+
+// .ori-no-tr-border-radius {
+//   border-top-right-radius: 0 !important;
+// }
+
+// .ori-tl-border-radius-5 {
+//     border-top-left-radius: 5px !important;
+// }
+
+// .ori-bl-border-radius-base {
+//   border-bottom-left-radius: $border-radius-base;
+// }
+
+// .ori-br-border-radius-base {
+//   border-bottom-right-radius: $border-radius-base;
+// }
+
+.ori-border-radius-base {
+  border-radius: $border-radius-base;
+}
+
+// .ori-border-radius-10 {
+//   border-radius: 10px !important;
+// }
+
+// .ori-border-radius-15 {
+//   border-radius: 15px !important;
+// }
+
+// .ori-border-radius-20 {
+//   border-radius: 20px !important;
+// }
+
+// .ori-border-radius-half {
+//   border-radius: 50% !important;
+// }
+
+// .ori-bubble-border-radius {
+//     border-radius: 15px 15px 2px;
+// }
+
+.ori-box-shadow-light {
+  box-shadow: 0 2px 6px 0 rgba($black, 0.06);
+}
+
+// .ori-box-shadow-inset-light {
+//   box-shadow: inset 0 0 8px rgba($black, 0.1);
+// }
+
+// .ori-box-shadow-primary {
+//   box-shadow: 0 2px 4px 0 rgba($primary, 0.3);
+// }
+
+// .ori-box-shadow-danger {
+//     box-shadow: 0 2px 4px 0 rgba($danger, 0.3);
+// }
+
+// .ori-box-shadow-aquamarine {
+//     box-shadow: 0 2px 4px 0 rgba($aquamarine, 0.3);
+// }
+
+// .ori-box-shadow-warning {
+//     box-shadow: 0 2px 4px 0 rgba($warning, 0.3);
+// }
+
+.ori-box-shadow {
+  box-shadow: 1px 2px 4px 4px rgba($black, 0.1);
+}
+
+// .ori-box-shadow-none {
+//     box-shadow: none;
+// }
+
+.ori-display-block {
+  display: block !important;
+}
+
+.ori-display-none {
+  display: none !important;
+}
+
+.ori-overflow-hidden {
+  overflow: hidden;
+}
+
+.ori-overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.ori-overflow-y-auto {
+  overflow-y: auto;
+}
+
+.ori-overflow-x-auto {
+  overflow-x: auto;
+}
+
+.ori-overflow-auto {
+  overflow: auto;
+}
+
+// .ori-ws-normal {
+//     white-space: normal;
+//     height: auto;
+//     padding-top: 3px;
+//     padding-bottom: 3px;
+//     line-height: 1.2;
+// }
+
+// .ori-rotate-90 {
+//   transform: rotate(90deg);
+// }
+
+// .ori-rotate-45 {
+//   transform: rotate(45deg);
+// }
+
+// .ori-rotate-180 {
+//   transform: rotate(180deg);
+// }
+
+// .ori-rotate-270 {
+//     transform: rotate(270deg);
+// }
+
+.ori-transition-half {
+  transition: transform 500ms;
+}
+
+/*---------------------- FONT CLASSES -----------------------*/
+
+// .ori-font-thin {
+//     font-weight: $font-thin; //300
+// }
+
+// .ori-font-normal {
+//   font-weight: $font-normal; //400
+// }
+
+.ori-font-bold {
+  font-weight: $font-bold; //500
+}
+
+// .ori-font-ultra-bold {
+//     font-weight: $font-ultra-bold; //700
+// }
+// .ori-font-8 {
+//   font-size: 8px !important; //8px
+// }
+
+.ori-font-xxs {
+  font-size: $font-size-xxs !important; //10px
+}
+
+// .ori-font-11 {
+//   font-size: 11px !important; //11px
+// }
+
+.ori-font-xs {
+  font-size: $font-size-xs !important; //12px
+}
+
+// .ori-font-13 {
+//   font-size: 13px !important; //13px
+// }
+
+.ori-font-sm {
+  font-size: $font-size-sm !important; //14px
+}
+
+.ori-font-md {
+  font-size: $font-size-md !important; //16px
+}
+
+// .ori-font-15 {
+//   font-size: 15px !important; //13px
+// }
+
+// .ori-font-18 {
+//   font-size: 18px !important; //18px
+// }
+
+.ori-font-lg {
+  font-size: $font-size-lg !important; //20px
+}
+
+.ori-font-xl {
+  font-size: $font-size-xl !important; //24px
+}
+
+.ori-font-xxl {
+  font-size: $font-size-xxl !important; //30px
+}
+
+/*---------------------- COMMON FLEX CLASSES --------------------- */
+
+.ori-flex {
+  display: flex;
+}
+
+.ori-flex-wrap {
+  flex-wrap: wrap;
+}
+
+// .ori-flex-no-wrap {
+//     flex-wrap: nowrap;
+// }
+
+.ori-flex-row {
+  display: flex !important;
+  flex-direction: row;
+}
+
+.ori-flex-rr {
+  display: flex !important;
+  flex-direction: row-reverse;
+}
+
+.ori-flex-column {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.ori-flex-cr {
+  display: flex !important;
+  flex-direction: column-reverse;
+}
+
+.ori-flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.ori-flex-ac {
+  align-items: center;
+}
+
+.ori-flex-afe {
+  align-items: flex-end;
+}
+
+.ori-flex-jc {
+  //flex-justify-center
+  justify-content: center;
+}
+
+.ori-flex-jsb {
+  //flex-justify-space-between
+  justify-content: space-between;
+}
+
+// .ori-flex-jsa { //flex-justify-space-around
+//     justify-content: space-around;
+// }
+
+.ori-flex-jfe {
+  //flex-justify-flex-end
+  justify-content: flex-end;
+}
+
+.ori-full-flex {
+  flex: 1;
+}
+
+// .ori-flex-none {
+//   flex: none;
+// }
+
+// .ori-inline-flex {
+//   display: inline-flex;
+// }
+
+/*---------------------- Custom Tag CLASSES----------------------*/
+
+/*---------------------- COMMON PADDING CLASSES----------------------*/
+//pad -> padding
+//l -> left
+//r -> right
+//t -> top
+//b -> bottom
+
+//---------------- padding-X -------------------
+
+// .ori-no-pad {
+//   padding: 0px !important;
+// }
+
+// .ori-pad-3 {
+//   padding: 3px !important;
+// }
+
+.ori-pad-5 {
+  padding: 5px !important;
+}
+
+// .ori-pad-7 {
+//     padding: 7px !important;
+// }
+
+// .ori-pad-8 {
+//   padding: 8px !important;
+// }
+
+.ori-pad-10 {
+  padding: 10px !important;
+}
+
+.ori-pad-15 {
+  padding: 15px !important;
+}
+
+.ori-pad-20 {
+  padding: 20px !important;
+}
+
+// .ori-pad-40 {
+//     padding: 40px !important;
+// }
+
+//---------------- left-right-padding-X -------------------
+
+// .ori-no-lr-pad {
+//     padding-left: 0;
+// padding-right: 0;
+// }
+
+// .ori-lr-pad-3 {
+//   padding-left: 3px;
+//   padding-right: 3px;
+// }
+
+// .ori-lr-pad-4 {
+//   padding-left: 4px;
+//   padding-right: 4px;
+// }
+
+.ori-lr-pad-5 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+// .ori-lr-pad-6 {
+//   padding-left: 6px;
+//   padding-right: 6px;
+// }
+
+.ori-lr-pad-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+// .ori-lr-pad-12 {
+//   padding-left: 12px;
+//   padding-right: 12px;
+// }
+
+.ori-lr-pad-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.ori-lr-pad-20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+// .ori-lr-pad-30 {
+//     padding-left: 30px;
+// padding-right: 30px;
+// }
+
+// .ori-lr-pad-40 {
+//   padding-left: 40px;
+//   padding-right: 40px;
+// }
+
+// .ori-lr-pad-45 {
+//   padding-left: 45px;
+//   padding-right: 45px;
+// }
+
+//---------------- top-bottom-padding-X --------------------
+
+// .ori-no-tb-pad {
+//     padding-top: 0;
+// padding-bottom: 0;
+// }
+
+// .ori-tb-pad-1 {
+//   padding-top: 1px;
+//   padding-bottom: 1px;
+// }
+
+// .ori-tb-pad-3 {
+//   padding-top: 3px;
+//   padding-bottom: 3px;
+// }
+
+.ori-tb-pad-5 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.ori-tb-pad-7 {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.ori-tb-pad-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.ori-tb-pad-15 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.ori-tb-pad-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+// .ori-tb-pad-30 {
+//     padding-top: 30px;
+// padding-bottom: 30px;
+// }
+
+//----------------- left-padding-X -------------------
+
+// .ori-no-l-pad {
+//   padding-left: 0px !important;
+// }
+
+// .ori-l-pad-2 {
+//   padding-left: 2px !important;
+// }
+
+// .ori-l-pad-3 {
+//   padding-left: 3px !important;
+// }
+
+.ori-l-pad-5 {
+  padding-left: 5px !important;
+}
+
+.ori-l-pad-10 {
+  padding-left: 10px !important;
+}
+
+.ori-l-pad-15 {
+  padding-left: 15px !important;
+}
+
+.ori-l-pad-20 {
+  padding-left: 20px;
+}
+
+// .ori-l-pad-30 {
+//   padding-left: 30px;
+// }
+
+//----------------- right-padding-X -------------------
+
+// .ori-no-r-pad {
+//     padding-right: 0px !important;
+// }
+
+// .ori-r-pad-3 {
+//   padding-right: 3px !important;
+// }
+
+.ori-r-pad-5 {
+  padding-right: 5px;
+}
+
+.ori-r-pad-10 {
+  padding-right: 10px;
+}
+
+.ori-r-pad-15 {
+  padding-right: 15px;
+}
+
+.ori-r-pad-20 {
+  padding-right: 20px;
+}
+
+// .ori-r-pad-25 {
+//   padding-right: 25px;
+// }
+
+// .ori-r-pad-30 {
+//   padding-right: 30px;
+// }
+
+// .ori-r-pad-40 {
+//   padding-right: 40px;
+// }
+
+// .ori-r-pad-60 {
+//   padding-right: 60px;
+// }
+
+//----------------- top-padding-X -------------------
+
+// .ori-no-t-pad {
+//     padding-top: 0px !important;
+// }
+
+// .ori-t-pad-3 {
+//     padding-top: 3px;
+// }
+
+.ori-t-pad-5 {
+  padding-top: 5px;
+}
+
+// .ori-t-pad-6 {
+//     padding-top: 6px;
+// }
+
+.ori-t-pad-10 {
+  padding-top: 10px;
+}
+
+// .ori-t-pad-13 {
+//     padding-top: 13px;
+// }
+
+.ori-t-pad-15 {
+  padding-top: 15px;
+}
+
+.ori-t-pad-20 {
+  padding-top: 20px;
+}
+
+// .ori-t-pad-25 {
+//     padding-top: 25px;
+// }
+
+// .ori-t-pad-30 {
+//     padding-top: 30px;
+// }
+
+//----------------- bottom-padding-X -------------------
+
+// .ori-no-b-pad {
+//     padding-bottom: 0px !important;
+// }
+
+.ori-b-pad-5 {
+  padding-bottom: 5px !important;
+}
+
+.ori-b-pad-10 {
+  padding-bottom: 10px !important;
+}
+
+// .ori-b-pad-12 {
+//   padding-bottom: 12px;
+// }
+
+.ori-b-pad-15 {
+  padding-bottom: 15px !important;
+}
+
+.ori-b-pad-20 {
+  padding-bottom: 20px !important;
+}
+
+// .ori-b-pad-40 {
+//     padding-bottom: 40px !important;
+// }
+
+// .ori-b-pad-60 {
+//     padding-bottom: 60px;
+// }
+
+// .ori-b-pad-65 {
+//     padding-bottom: 65px;
+// }
+
+/*---------------------------- lagend common style ------------------------------*/
+// .ori-lagend {
+//   display: inline-block;
+//   font-weight: 400;
+//   text-align: center;
+//   white-space: nowrap;
+//   vertical-align: middle;
+//   border: solid 1px #d9d9d9;
+//   padding: 0 10px;
+//   height: 36px;
+//   font-size: 12px;
+//   line-height: 34px;
+//   border-radius: 4px;
+//   margin-bottom: 5px;
+//   color: #545454;
+//   background-color: #ffffff;
+//   border-color: #ffffff;
+//   cursor: pointer;
+// }
+
+// .ori-block-button {
+//   padding: 5px;
+//   color: #999;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+// }
+
+/*---------------------------- COMMON MARGIN CLASSES-----------------------------*/
+//mrgn -> margin
+//l -> left
+//r -> right
+//t -> top
+//b -> bottom
+
+//----------------------- margin-X -------------------------
+
+// .ori-no-mrgn {
+//   margin: 0px !important;
+// }
+
+// .ori-mrgn-3 {
+//     margin: 3px;
+// }
+
+// .ori-mrgn-5 {
+//   margin: 5px;
+// }
+
+// .ori-mrgn-20 {
+//     margin: 20px;
+// }
+
+// .ori-mrgn-30 {
+//     margin: 30px;
+// }
+
+//---------------- left-right-margin-X -------------------
+
+// .ori-no-lr-mrgn {
+//     @include lr-margin(0px);
+// }
+
+// .ori-lr-mrgn-neg-5 {
+//   margin-left: -5px;
+//   margin-right: -5px;
+// }
+
+// .ori-lr-mrgn-3 {
+//   @include lr-margin(3px);
+// }
+
+.ori-lr-mrgn-5 {
+  @include lr-margin(5px);
+}
+
+.ori-lr-mrgn-10 {
+  @include lr-margin(10px);
+}
+
+// .ori-lr-mrgn-15 {
+//   @include lr-margin(15px);
+// }
+
+//---------------- top-bottom-margin-X --------------------
+
+// .ori-no-tb-mrgn {
+//     @include tb-margin(0px);
+// }
+
+// .ori-tb-mrgn-3 {
+//   @include tb-margin(3px);
+// }
+
+.ori-tb-mrgn-5 {
+  @include tb-margin(5px);
+}
+
+.ori-tb-mrgn-10 {
+  @include tb-margin(10px);
+}
+
+.ori-tb-mrgn-15 {
+  @include tb-margin(15px);
+}
+
+//------------------- left-margin-X ---------------------
+
+// .ori-no-l-mrgn {
+//     margin-left: 0px !important;
+// }
+
+// .ori-l-mrgn-auto {
+//   margin-left: auto;
+// }
+
+// .ori-l-mrgn-neg-5 {
+//     margin-left: -5px;
+// }
+
+// .ori-l-mrgn-3 {
+//   margin-left: 3px;
+// }
+
+.ori-l-mrgn-5 {
+  margin-left: 5px !important;
+}
+
+.ori-l-mrgn-10 {
+  margin-left: 10px !important;
+}
+
+// .ori-l-mrgn-30 {
+//   margin-left: 30px;
+// }
+
+//-------------------- right-margin-X ---------------------
+
+// .ori-no-r-mrgn {
+//   margin-right: 0px;
+// }
+
+// .ori-r-mrgn-3 {
+//   margin-right: 3px;
+// }
+
+.ori-r-mrgn-5 {
+  margin-right: 5px !important;
+}
+
+.ori-r-mrgn-10 {
+  margin-right: 10px !important;
+}
+
+.ori-r-mrgn-15 {
+  margin-right: 15px;
+}
+
+// .ori-r-mrgn-20 {
+//   margin-right: 20px;
+// }
+
+// .ori-r-mrgn-30 {
+//     margin-right: 30px;
+// }
+
+//----------------------- top-margin-X ----------------------
+
+// .ori-no-t-mrgn {
+//     margin-top: 0px !important;
+// }
+
+// .ori-t-mrgn-3 {
+//   margin-top: 3px;
+// }
+
+.ori-t-mrgn-5 {
+  margin-top: 5px !important;
+}
+
+.ori-t-mrgn-10 {
+  margin-top: 10px !important;
+}
+
+// .ori-t-mrgn-20 {
+//   margin-top: 20px;
+// }
+
+//------------------------- bottom-margin-X -----------------------
+
+// .ori-no-b-mrgn {
+//   margin-bottom: 0px !important;
+// }
+
+.ori-b-mrgn-5 {
+  margin-bottom: 5px !important;
+}
+
+.ori-b-mrgn-10 {
+  margin-bottom: 10px;
+}
+
+.ori-b-mrgn-15 {
+  margin-bottom: 15px;
+}
+
+.ori-b-mrgn-20 {
+  margin-bottom: 20px !important;
+}
+
+// .ori-b-mrgn-25 {
+//   margin-bottom: 25px;
+// }
+
+//----------width for loading card ------------
+
+.width1 {
+  max-width: 100px;
+  width: 15%;
+  min-width: 70px;
+}
+
+.width2 {
+  max-width: 120px;
+  width: 18%;
+  min-width: 80px;
+}
+
+.width3 {
+  max-width: 150px;
+  min-width: 100px;
+  width: 20%;
+}
+
+.width4 {
+  max-width: 180px;
+  min-width: 120px;
+  width: 25%;
+}
+
+//----------------------- COMMON MEDIA QUERY -----------------------
+
+@media only screen and (max-width: 576px) {
+  //sm
+  .ori-stats-card-width {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {
+  //md
+  .ori-stats-card-width {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  //lg
+  .ori-stats-card-width {
+    width: 33.33%;
+  }
+}
+
+// @media only screen and (min-width: 992px) and (max-width: 1199px) {
+// 	//xl
+// 	.ori-stats-card-width {
+// 		width: 33.33%;
+// 	}
+// }
+
+@media only screen and (min-width: 1200px) {
+  //xxl
+  .ori-stats-card-width {
+    width: 25%;
+  }
+}
